@@ -14,19 +14,19 @@
 
       flake = {
         overlays.default = final: prev: {
-          tcc = final.callPackage ./package.nix { };
+          tinycc = final.callPackage ./package.nix { };
         };
       };
 
       perSystem =
         { pkgs, ... }:
         let
-          tcc = pkgs.callPackage ./package.nix { };
+          tinycc = pkgs.callPackage ./package.nix { };
         in
         {
           packages = {
-            default = tcc;
-            inherit tcc;
+            default = tinycc;
+            inherit tinycc;
           };
         };
     };
