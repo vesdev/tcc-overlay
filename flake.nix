@@ -14,7 +14,7 @@
 
       flake = {
         overlays.default = final: prev: {
-          tinycc = final.callPackage ./package.nix { };
+          tinycc = final.callPackage ./package.nix { inherit (prev) tinycc; };
         };
       };
 
